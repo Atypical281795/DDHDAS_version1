@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Image Example</title>
+    <style>
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-box {
+            margin: 10px;
+        }
+        .image-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #start-button-2 {
+            display: none; /* Initially hide the START button */
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <div class="image-box">
+        <div class="image-title">Original image</div>
+        <div class="image-content">
+            <button id="load-image-button">Click to load image</button>
+            <input type="file" id="image-input" style="display:none;" accept="image/*">
+            <img id="loaded-image" style="display:none;" alt="Loaded Image">
+        </div>
+    </div>
+    <div class="image-box">
+        <div class="image-title">Later image</div>
+        <div class="image-content">
+            <button id="start-button-2">START</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('load-image-button').addEventListener('click', function() {
+        document.getElementById('image-input').click();
+    });
+
+    document.getElementById('image-input').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageElement = document.getElementById('loaded-image');
+                imageElement.src = e.target.result;
+                imageElement.style.display = 'block';
+                document.getElementById('start-button-2').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
+</html>

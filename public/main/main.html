@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="sidebar">
+        <div id="list-header">
+            <h3>List of images</h3>
+        </div>
+        <div id="search-container">
+            <i id="search-icon" class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+        <ul id="image-list">
+            <li>12362image.png</li>
+            <li>12363image.png</li>
+            <li>12364image.png</li>
+            <li>12365image.png</li>
+            <li>12366image.png</li>
+            <li>12367image.png</li>
+            <li>12368image.png</li>
+            <li>12369image.png</li>
+            <li>12370image.png</li>
+            <li>12371image.png</li>
+            <li>12372image.png</li>
+            <li>12373image.png</li>
+            <li>12374image.png</li>
+            <li>12375image.png</li>
+            <li>12376image.png</li>
+            <li>12377image.png</li>
+        </ul>
+        <button id="select-folder">Select folder</button>
+        <div id="user-menu-block">
+            <div id="user-menu">
+                <i class="fas fa-user"></i>
+                <span id="user-name">your name</span>
+                <i class="fas fa-caret-down" id="menu-arrow"></i>
+            </div>
+            <ul id="user-dropdown">
+                <a href="C:\Users\Ryan\Desktop\DDHDAS\public\profile\profile.html"><i class="fas fa-user"></i>Profile</a>
+                <a href="C:\Users\Ryan\Desktop\DDHDAS\public\settings\settings.html"><i class="fas fa-cog"></i>Settings</a>
+                <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </ul>
+        </div>
+    </div>
+    <div id="main-content">
+        <div class="image-container">
+            <div class="image-box">
+                <div class="image-title">Original image</div>
+                <div class="image-content">
+                    <button id="start-button">Click to load image</button>
+                    <input type="file" id="image-input" style="display:none;" accept="image/*">
+                    <img id="loaded-image" style="display:none; max-width: 100%; max-height: 100%;" alt="Loaded Image">
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-title">Later image</div>
+                <div class="image-content">
+                    <button id="start-button-2" style="display:none;">START</button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div class="text-area-container">
+                <textarea placeholder="Description of symptoms"></textarea>
+                <textarea placeholder="Comment"></textarea>
+            </div>
+            <div class="button-container">
+                <div class="action-button-wrapper">
+                    <div class="action-icon"><i class="fas fa-redo"></i></div>
+                    <button class="action-button" onclick="backToMenu()" id="retry">Retry</button>
+                </div>
+                <div class="action-button-wrapper">
+                    <div class="action-icon"><i class="fas fa-file-excel"></i></div>
+                    <button class="action-button" id="export-excel">Export to Excel</button>
+                </div>
+                <div class="action-button-wrapper">
+                    <div class="action-icon"><i class="fas fa-file-image"></i></div>
+                    <button class="action-button" id="export-image">Export image</button>
+                </div>
+                <div class="action-button-wrapper">
+                    <div class="action-icon"><i class="fas fa-sign-out-alt"></i></div>
+                    <button class="action-button" id="exit">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
